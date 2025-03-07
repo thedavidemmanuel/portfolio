@@ -1,18 +1,42 @@
 'use client'
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const router = useRouter();
+
+  // Clear any URL hash on initial load (except for home) to prevent auto-scrolling
+  useEffect(() => {
+    if (window.location.hash && window.location.hash !== '#home') {
+      window.history.replaceState({}, '', window.location.pathname);
+    }
+  }, []);
+
+  // Enhanced smooth scroll function
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    setMenuOpen(false);
+    
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      
+      // Update URL without causing a page reload
+      window.history.pushState({}, '', `#${sectionId}`);
+    }
+  };
 
   return (
     <header className="fixed w-full bg-[#0a192f] flex justify-between items-center px-6 md:px-20 py-3 z-[1000]">
       {/* Logo */}
-      <div className="cursor-pointer" onClick={() => router.push('/')}>
+      <div
+        className="cursor-pointer"
+        onClick={() => {
+          document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState({}, '', '/');
+        }}
+      >
         <Image 
           src="/logo-main.png" 
           alt="Logo" 
@@ -26,40 +50,71 @@ const Header = () => {
       <nav className="hidden md:block">
         <ul className="flex items-center space-x-8">
           <li>
-            <Link href="#about" className="text-white hover:text-[#64ffda] transition-colors">
+            <a 
+              href="#about" 
+              className="text-white hover:text-[#64ffda] transition-colors"
+              onClick={(e) => scrollToSection(e, 'about')}
+            >
               <span className="text-[#64ffda] mr-1">00.</span>
               <span>About</span>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="#experience" className="text-white hover:text-[#64ffda] transition-colors">
+            <a 
+              href="#experience" 
+              className="text-white hover:text-[#64ffda] transition-colors"
+              onClick={(e) => scrollToSection(e, 'experience')}
+            >
               <span className="text-[#64ffda] mr-1">01.</span>
               <span>Experience</span>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="#portfolio" className="text-white hover:text-[#64ffda] transition-colors">
+            <a 
+              href="#portfolio" 
+              className="text-white hover:text-[#64ffda] transition-colors"
+              onClick={(e) => scrollToSection(e, 'portfolio')}
+            >
               <span className="text-[#64ffda] mr-1">10.</span>
               <span>Projects</span>
-            </Link>
+            </a>
           </li>
           <li>
-            <Link href="#contact" className="text-white hover:text-[#64ffda] transition-colors">
+            <a 
+              href="#contact" 
+              className="text-white hover:text-[#64ffda] transition-colors"
+              onClick={(e) => scrollToSection(e, 'contact')}
+            >
               <span className="text-[#64ffda] mr-1">11.</span>
               <span>Reach Out</span>
-            </Link>
+            </a>
           </li>
           <li className="ml-4">
-            <Link href="#resume" className="border border-[#64ffda] text-[#64ffda] px-4 py-2 rounded hover:bg-[#64ffda]/10 transition-colors">
+            <a 
+              href="#resume" 
+              className="border border-[#64ffda] text-[#64ffda] px-4 py-2 rounded hover:bg-[#64ffda]/10 transition-colors"
+              onClick={(e) => scrollToSection(e, 'resume')}
+            >
               Resume
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
 
       {/* Hamburger Menu Button */}
-      <div className="md:hidden text-[#64ffda] cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
-        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 448 512" height="1.5em" width="1.5em" xmlns="http://www.w3.org/2000/svg">
+      <div
+        className="md:hidden text-[#64ffda] cursor-pointer"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        <svg
+          stroke="currentColor"
+          fill="currentColor"
+          strokeWidth="0"
+          viewBox="0 0 448 512"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
         </svg>
       </div>
@@ -67,8 +122,11 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       {menuOpen && (
         <>
-          <div className="fixed inset-0 bg-black/50 z-[1001]" onClick={() => setMenuOpen(false)}></div>
-          <nav className="fixed top-0 right-0 bottom-0 w-3/4 max-w-sm bg-[#112240] p-6 z-[1002] flex flex-col justify-center">
+          <div
+            className="fixed inset-0 bg-black/50 z-[1001]"
+            onClick={() => setMenuOpen(false)}
+          ></div>
+          <nav className="fixed inset-0 bg-[#112240] flex flex-col items-center justify-center z-[1002] p-6">
             <button 
               className="absolute top-6 right-6 text-[#64ffda] text-2xl"
               onClick={() => setMenuOpen(false)}
@@ -79,53 +137,53 @@ const Header = () => {
             
             <ul className="flex flex-col items-center space-y-8">
               <li>
-                <Link 
+                <a 
                   href="#about" 
                   className="text-white text-lg hover:text-[#64ffda] transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'about')}
                 >
                   <span className="text-[#64ffda] mr-1 block text-sm mb-1">00.</span>
                   <span>About</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link 
+                <a 
                   href="#experience" 
                   className="text-white text-lg hover:text-[#64ffda] transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'experience')}
                 >
                   <span className="text-[#64ffda] mr-1 block text-sm mb-1">01.</span>
                   <span>Experience</span>
-                </Link>
+                </a>
               </li>
               <li>
-                <Link 
+                <a 
                   href="#portfolio" 
                   className="text-white text-lg hover:text-[#64ffda] transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'portfolio')}
                 >
                   <span className="text-[#64ffda] mr-1 block text-sm mb-1">10.</span>
-                  <span>Portfolio</span>
-                </Link>
+                  <span>Projects</span>
+                </a>
               </li>
               <li>
-                <Link 
+                <a 
                   href="#contact" 
                   className="text-white text-lg hover:text-[#64ffda] transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'contact')}
                 >
                   <span className="text-[#64ffda] mr-1 block text-sm mb-1">11.</span>
                   <span>Reach Out</span>
-                </Link>
+                </a>
               </li>
               <li className="pt-4">
-                <Link 
+                <a 
                   href="#resume" 
                   className="border border-[#64ffda] text-[#64ffda] px-6 py-2 rounded hover:bg-[#64ffda]/10 transition-colors"
-                  onClick={() => setMenuOpen(false)}
+                  onClick={(e) => scrollToSection(e, 'resume')}
                 >
                   Resume
-                </Link>
+                </a>
               </li>
             </ul>
           </nav>

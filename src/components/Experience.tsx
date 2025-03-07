@@ -46,8 +46,7 @@ const Experience: React.FC = () => {
     <section className="w-full py-20 bg-[#0a192f] text-[#8892b0]">
       <div className="container mx-auto px-4 max-w-4xl">
         <h2 className="text-3xl font-bold mb-16 flex items-center text-[#ccd6f6]">
-          <span className="text-[#64ffda] mr-2 font-mono text-xl">02.</span> 
-          Where I&apos;ve Worked
+          My Experience
           <div className="h-px bg-[#233554] flex-grow ml-6"></div>
         </h2>
         
@@ -72,7 +71,7 @@ const Experience: React.FC = () => {
                     tabIndex={isSelected ? 0 : -1}
                     ref={el => { tabs.current[i] = el; }}
                     id={`tab-${id}`}
-                    aria-selected={isSelected}
+                    aria-selected={isSelected ? "true" : "false"}
                     aria-controls={`panel-${id}`}
                   >
                     {company}

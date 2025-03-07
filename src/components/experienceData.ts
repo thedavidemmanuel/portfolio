@@ -11,10 +11,10 @@ export type Experience = {
   
   const experienceData: Experience[] = [
     {
-      id: 'upstatement',
-      company: 'Upstatement',
+      id: 'Antwise',
+      company: 'Antwise',
       title: 'Lead Engineer',
-      url: 'https://upstatement.com',
+      url: 'https://antwise.app',
       date: 'May 2018 - Present',
       responsibilities: [
         'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more',
@@ -24,8 +24,8 @@ export type Experience = {
       ]
     },
     {
-      id: 'apple',
-      company: 'Apple',
+      id: 'Kupa',
+      company: 'Kupa',
       title: 'UI Engineer',
       url: 'https://apple.com',
       date: 'July 2017 - April 2018',
@@ -38,7 +38,7 @@ export type Experience = {
     },
     {
       id: 'scout',
-      company: 'Scout Studio',
+      company: 'African Leadership University',
       title: 'Studio Developer',
       url: 'https://scout.camd.northeastern.edu/',
       date: 'January 2017 - June 2017',

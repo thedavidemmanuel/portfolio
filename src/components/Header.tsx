@@ -123,10 +123,10 @@ const Header = () => {
       {menuOpen && (
         <>
           <div
-            className="fixed inset-0 bg-black/50 z-[1001]"
+            className="fixed inset-0 bg-black/30 backdrop-blur-sm z-[1001]"
             onClick={() => setMenuOpen(false)}
           ></div>
-          <nav className="fixed inset-0 bg-[#112240] flex flex-col items-center justify-center z-[1002] p-6">
+          <nav className="fixed right-0 top-0 w-[60%] h-full bg-[#112240] flex flex-col items-center justify-center z-[1002] p-6">
             <button 
               className="absolute top-6 right-6 text-[#64ffda] text-2xl"
               onClick={() => setMenuOpen(false)}
@@ -135,44 +135,44 @@ const Header = () => {
               ✕
             </button>
             
-            <ul className="flex flex-col items-center space-y-8">
-              <li>
+            <ul className="flex flex-col items-center justify-center h-full space-y-8">
+              <li className="text-center">
                 <a 
                   href="#about" 
-                  className="text-white text-lg hover:text-[#64ffda] transition-colors"
+                  className="text-white text-lg hover:text-[#64ffda] transition-colors inline-block"
                   onClick={(e) => scrollToSection(e, 'about')}
                 >
-                  <span className="text-[#64ffda] mr-1 block text-sm mb-1">00.</span>
+                  <span className="text-[#64ffda] block text-sm mb-1">00.</span>
                   <span>About</span>
                 </a>
               </li>
-              <li>
+              <li className="text-center">
                 <a 
                   href="#experience" 
-                  className="text-white text-lg hover:text-[#64ffda] transition-colors"
+                  className="text-white text-lg hover:text-[#64ffda] transition-colors inline-block"
                   onClick={(e) => scrollToSection(e, 'experience')}
                 >
-                  <span className="text-[#64ffda] mr-1 block text-sm mb-1">01.</span>
+                  <span className="text-[#64ffda] block text-sm mb-1">01.</span>
                   <span>Experience</span>
                 </a>
               </li>
-              <li>
+              <li className="text-center">
                 <a 
                   href="#portfolio" 
-                  className="text-white text-lg hover:text-[#64ffda] transition-colors"
+                  className="text-white text-lg hover:text-[#64ffda] transition-colors inline-block"
                   onClick={(e) => scrollToSection(e, 'portfolio')}
                 >
-                  <span className="text-[#64ffda] mr-1 block text-sm mb-1">10.</span>
+                  <span className="text-[#64ffda] block text-sm mb-1">10.</span>
                   <span>Projects</span>
                 </a>
               </li>
-              <li>
+              <li className="text-center">
                 <a 
                   href="#contact" 
-                  className="text-white text-lg hover:text-[#64ffda] transition-colors"
+                  className="text-white text-lg hover:text-[#64ffda] transition-colors inline-block"
                   onClick={(e) => scrollToSection(e, 'contact')}
                 >
-                  <span className="text-[#64ffda] mr-1 block text-sm mb-1">11.</span>
+                  <span className="text-[#64ffda] block text-sm mb-1">11.</span>
                   <span>Reach Out</span>
                 </a>
               </li>

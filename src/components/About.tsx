@@ -31,7 +31,7 @@ const About = () => {
             </div>
             <div className="relative z-10">
               <Image
-                src="/about-image.png"
+                src="/about-david.png"
                 alt="David Emmanuel coding"
                 width={400}
                 height={400}
@@ -42,19 +42,19 @@ const About = () => {
 
           {/* Right Side - Text Content */}
           <div className="flex-1 text-slate-300">
-            <p className="mb-6 text-lg leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed text-justify">
               Hey there 👋! I&apos;m David Emmanuel, a Software Engineering student at African Leadership University with a passion for all things tech. I dabble in Web development, mobile apps, Web3, and blockchain. But what really gets my circuits buzzing is machine learning and AI, and their application in cybersecurity.
             </p>
             
-            <p className="mb-6 text-lg leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed text-justify">
               I enjoy tackling problems at the intersection of technology and entrepreneurship, and I&apos;m always up for sharing what I&apos;ve learned along the way like an obsessed nerd 😁.
             </p>
             
-            <p className="mb-6 text-lg leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed text-justify">
               When I&apos;m not busy coding, you might catch me diving into the latest tech news (because who doesn&apos;t want to know when their smart fridge starts tweeting? 🙄), or binge-watching my favorite series like <span className="italic">The Boys</span> or <span className="italic">House of the Dragon</span>. I also love playing video games; I&apos;ve got a soft spot for zombie games—they&apos;re like debugging, but with more adrenaline!
             </p>
             
-            <p className="mb-6 text-lg leading-relaxed">
+            <p className="mb-6 text-lg leading-relaxed text-justify">
               I&apos;m also a music hobbyist: I play the keyboard, sing occasionally, and produce beats on my laptop. And yes, I&apos;m surprisingly good at it!
             </p>
           </div>

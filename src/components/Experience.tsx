@@ -6,13 +6,14 @@ import type { Experience } from './experienceData';
 import styles from '../styles/experience.module.css';
 
 const Experience: React.FC = () => {
-  const [activeTabId, setActiveTabId] = useState<string>('upstatement');
+  // Set the default active tab to the first item in experienceData
+  const [activeTabId, setActiveTabId] = useState<string>(experienceData[0].id);
   const [tabFocus, setTabFocus] = useState<number>(0);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const highlightPosition = `${experienceData.findIndex(({ id }) => id === activeTabId) * 48}px`;
 
-  // Update CSS variable on the container element instead of using inline style
+  // Update CSS variable on the container element
   useEffect(() => {
     if (containerRef.current) {
       containerRef.current.style.setProperty('--highlight-position', highlightPosition);
@@ -37,9 +38,11 @@ const Experience: React.FC = () => {
     return () => currentTabs.forEach(tab => tab?.removeEventListener('keydown', handleKeyDown));
   }, []);
 
-  // Focus on active tab
+  // Focus on active tab without causing scroll
   useEffect(() => {
-    if (tabs.current[tabFocus]) tabs.current[tabFocus]?.focus();
+    if (tabs.current[tabFocus]) {
+      tabs.current[tabFocus].focus({ preventScroll: true });
+    }
   }, [tabFocus]);
 
   return (
@@ -53,25 +56,22 @@ const Experience: React.FC = () => {
         <div className="flex flex-col md:flex-row">
           {/* Left - Company tabs */}
           <div className={`${styles.tabContainer} relative mb-10 md:mb-0 md:w-1/4 md:max-w-[200px]`} ref={containerRef}>
-            {/* Highlight indicator for active tab; now reads CSS property */}
+            {/* Highlight indicator for active tab; reads CSS variable */}
             <div className={styles.highlightIndicator}></div>
             
             <div className={styles.tabRow} role="tablist">
               {experienceData.map(({ id, company }, i) => {
-                // Pre-compute the selected state to use it directly in aria-selected
                 const isSelected = activeTabId === id;
                 return (
                   <button
                     key={id}
-                    className={`${styles.tab} ${
-                      isSelected ? styles.tabActive : styles.tabInactive
-                    }`}
+                    className={`${styles.tab} ${isSelected ? styles.tabActive : styles.tabInactive}`}
                     onClick={() => setActiveTabId(id)}
                     role="tab"
                     tabIndex={isSelected ? 0 : -1}
                     ref={el => { tabs.current[i] = el; }}
                     id={`tab-${id}`}
-                    aria-selected={isSelected ? "true" : "false"}
+                    aria-selected={isSelected ? 'true' : 'false'}
                     aria-controls={`panel-${id}`}
                   >
                     {company}

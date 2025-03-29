@@ -120,9 +120,9 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full py-16 bg-[#0a192f] text-[#8892b0] overflow-hidden">
+    <section className="w-full bg-[#0a192f] text-[#8892b0] overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-[#ccd6f6]">
+        <h2 className="text-4xl font-bold text-center mb-8 text-[#ccd6f6]">
           I work with...
         </h2>
         

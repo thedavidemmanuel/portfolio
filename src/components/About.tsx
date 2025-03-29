@@ -5,7 +5,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <section className="min-h-screen bg-[#0a192f] px-6 md:px-16">
+    <section id="about" className="min-h-screen bg-[#0a192f] px-6 md:px-16 pt-16 scroll-mt-16">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-white text-3xl md:text-4xl font-bold mb-8 relative inline-block">
           About Me

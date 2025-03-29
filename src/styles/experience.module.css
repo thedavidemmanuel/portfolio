@@ -69,3 +69,20 @@
 .tabContentActive {
   display: block;
 }
+
+.swipeIcon {
+  animation: slideRight 1.5s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(-5px);
+  }
+}

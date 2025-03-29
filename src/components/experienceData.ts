@@ -11,67 +11,58 @@ export type Experience = {
   
   const experienceData: Experience[] = [
     {
-      id: 'Antwise',
-      company: 'Antwise',
-      title: 'Lead Engineer',
+      id: 'Cerbertron',
+      company: 'Cerbertron',
+      title: 'Co-founder, Software Engineer',
       url: 'https://antwise.app',
-      date: 'May 2018 - Present',
+      date: 'October 2024 - Present',
       responsibilities: [
-        'Deliver high-quality, robust production code for a diverse array of projects for clients including Harvard Business School, Everytown for Gun Safety, Pratt Institute, Koala Health, Vanderbilt University, The 19th News, and more',
-        'Work alongside creative directors to lead the research, development, and architecture of technical solutions to fulfill business requirements',
-        'Collaborate with designers, project managers, and other engineers to transform creative concepts into production realities for clients and stakeholders',
-        'Provide leadership within engineering department through close collaboration, knowledge shares, and mentorship'
+        'Architecting and developing custom software solutions across web, mobile, and AI integration projects for businesses.',
+        'Leading technical consulting on software architecture and AI implementation, guiding products from conception to deployment with a focus on scalability and performance.',
       ]
     },
     {
       id: 'Kupa',
       company: 'Kupa',
-      title: 'UI Engineer',
-      url: 'https://apple.com',
-      date: 'July 2017 - April 2018',
+      title: 'Web Development Intern',
+      url: 'https://www.kupaglobal.com/',
+      date: 'January - May 2024',
       responsibilities: [
-        'Developed and maintained features for Apple Music web application using Ember.js',
-        'Collaborated with design and product teams to create intuitive user interfaces',
-        'Optimized application performance and addressed cross-browser compatibility issues',
-        'Participated in code reviews and contributed to internal component libraries'
+        'Developed and maintained corporate web infrastructure, integrating an A.T.S. system to create a candidate talent pool to streamline the recruitment process and improve the efficiency of talent acquisition. ',
       ]
     },
     {
-      id: 'scout',
+      id: 'Bootcamp',
+      company: 'Stackup Bootcamp',
+      title: 'Co-ordinator/Lead Instructor',
+      url: 'https://stackup9ja.dev',
+      date: 'October 2023 - Present',
+      responsibilities: [
+        'Organize and lead an annual intensive programming bootcamp for undergraduate students in Nigeria, building a pipeline of skilled developers.',
+        'Secure funding to provide internet connectivity support for participants, removing a critical barrier to technology education in Africa.',
+      ]
+    },
+    {
+      id: 'ALU',
       company: 'African Leadership University',
-      title: 'Studio Developer',
-      url: 'https://scout.camd.northeastern.edu/',
-      date: 'January 2017 - June 2017',
+      title: 'Course Assistant, Data Science Short Course',
+      url: 'https://www.alueducation.com/',
+      date: 'September 2023',
       responsibilities: [
-        'Worked with a team of student designers and developers to create digital solutions for real-world clients',
-        'Built and shipped the new website for Scout\'s design studio using WordPress',
-        'Assisted in teaching workshops for design and development students',
-        'Developed custom WordPress themes and plugins to meet client requirements'
+        'Assisted a visiting expert in facilitating a Data Science course covering data analysis, visualization, and mining.',
+        'Played a key role in enhancing participants knowledge of SQL and Python, leading to improved comprehension and skill application. ',
+        'Provided personalized support to students, addressing their questions and challenges, and fostering a collaborative learning environment.',
       ]
     },
     {
-      id: 'starry',
-      company: 'Starry',
-      title: 'Software Engineer Co-op',
-      url: 'https://starry.com',
-      date: 'July 2016 - December 2016',
+      id: 'GLP',
+      company: 'Global Leaders Program',
+      title: 'Participant',
+      url: 'https://www.carnegiefoundation.org/blog/meet-the-2023-global-leadership-program-cohort/',
+      date: 'July - August 2023',
       responsibilities: [
-        'Built and shipped features for Starry\'s customer-facing web application using Angular',
-        'Engineered and maintained internal tools for the customer support team',
-        'Worked with the product team to design and implement new features',
-        'Conducted unit and integration testing for application stability'
-      ]
-    },
-    {
-      id: 'mullenlowe',
-      company: 'MullenLowe',
-      title: 'Creative Technologist Co-op',
-      url: 'https://us.mullenlowe.com',
-      date: 'July - December 2015',
-      responsibilities: [
-        'Developed, maintained, and shipped production code for client websites primarily using HTML, CSS, Sass, JavaScript, and jQuery',
-        'Performed quality assurance tests on various sites to ensure cross-browser compatibility and mobile responsiveness',
-        'Clients included JetBlue, Lovesac, U.S. Cellular, U.S. Department of Defense, and more'
+        'Selected among 20 distinguished students at the African Leadership University for a one-month program to learn and explore innovation strategies through industrial visits to leading Silicon Valley tech companies, including Netflix, Google, Amazon, OpenAI, Ideo, Uber, Lyft, etc.  ',
+        'Engaged in intensive sessions on tech innovation, design thinking, entrepreneurship, and leadership, gaining invaluable insights from interactions with top industry leaders and entrepreneurs, including Sheryl Sandberg, Reed Hastings, Astro Teller, and other notable leaders. '
       ]
     }
   ];

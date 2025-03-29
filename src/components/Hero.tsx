@@ -70,7 +70,9 @@ const Hero = () => {
           </div>
           <div className="flex flex-wrap gap-4 mt-6 md:mt-8">
             <Link 
-              href="/resume" 
+              href="https://drive.google.com/file/d/1YLcC0qim67ksa6iUNlVKYWzQC2TtAerJ/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="border border-[#64ffda] text-[#64ffda] px-5 py-2.5 md:px-6 md:py-3 rounded hover:bg-[#64ffda]/10 transition-colors"
             >
               View Resume

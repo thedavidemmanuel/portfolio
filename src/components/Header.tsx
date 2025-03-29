@@ -91,9 +91,10 @@ const Header = () => {
           </li>
           <li className="ml-4">
             <a 
-              href="#resume" 
+              href="https://drive.google.com/file/d/1YLcC0qim67ksa6iUNlVKYWzQC2TtAerJ/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
               className="border border-[#64ffda] text-[#64ffda] px-4 py-2 rounded hover:bg-[#64ffda]/10 transition-colors"
-              onClick={(e) => scrollToSection(e, 'resume')}
             >
               Resume
             </a>
@@ -178,9 +179,10 @@ const Header = () => {
               </li>
               <li className="pt-4">
                 <a 
-                  href="#resume" 
+                  href="https://drive.google.com/file/d/1YLcC0qim67ksa6iUNlVKYWzQC2TtAerJ/view?usp=sharing" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
                   className="border border-[#64ffda] text-[#64ffda] px-6 py-2 rounded hover:bg-[#64ffda]/10 transition-colors"
-                  onClick={(e) => scrollToSection(e, 'resume')}
                 >
                   Resume
                 </a>

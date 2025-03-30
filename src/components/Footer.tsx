@@ -8,7 +8,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full bg-[#0a192f] text-[#8892b0] py-6">
+    <footer className="w-full bg-[var(--section-bg)] text-[var(--slate)] py-6">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Social Icons */}
@@ -17,7 +17,7 @@ const Footer = () => {
               href="https://github.com/thedavidemmanuel" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
+              className="text-[var(--light-slate)] hover:text-[var(--accent)] transition-colors"
               aria-label="GitHub Profile"
             >
               <FaGithub size={22} />
@@ -26,7 +26,7 @@ const Footer = () => {
               href="https://linkedin.com/in/yourusername" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
+              className="text-[var(--light-slate)] hover:text-[var(--accent)] transition-colors"
               aria-label="LinkedIn Profile"
             >
               <FaLinkedin size={22} />
@@ -35,7 +35,7 @@ const Footer = () => {
               href="https://twitter.com/yourusername" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="text-[#ccd6f6] hover:text-[#64ffda] transition-colors"
+              className="text-[var(--light-slate)] hover:text-[var(--accent)] transition-colors"
               aria-label="Twitter Profile"
             >
               <FaTwitter size={22} />
@@ -50,7 +50,7 @@ const Footer = () => {
                 navigator.clipboard.writeText(email);
                 alert('Email copied to clipboard!');
               }}
-              className="text-[#64ffda] hover:text-[#ccd6f6] transition-colors"
+              className="text-[var(--accent)] hover:text-[var(--light-slate)] transition-colors"
               aria-label="Copy email to clipboard"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">

@@ -78,12 +78,12 @@ const Projects: React.FC = () => {
   const secondRowProjects = projects.slice(3, 6);
 
   return (
-    <section className="w-full py-20 bg-[#0a192f] text-[#8892b0]">
+    <section className="w-full py-20 bg-[var(--section-bg)] text-[var(--slate)]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-2 text-[#ccd6f6]">
+        <h2 className="text-4xl font-bold text-center mb-2 text-[var(--light-slate)]">
           My Projects
         </h2>
-        <p className="text-xl text-center mb-12 text-[#8892b0]">
+        <p className="text-xl text-center mb-12 text-[var(--slate)]">
           Here are a few cool projects I&apos;ve worked on. Hover over any project to learn more!
         </p>
         
@@ -111,7 +111,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
   
   return (
     <div 
-      className="relative rounded-lg overflow-hidden h-96 bg-[#112240] transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
+      className="relative rounded-lg overflow-hidden h-96 bg-[var(--card-bg)] transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -126,8 +126,8 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       </div>
       
       <div className="p-6">
-        <h3 className="text-xl font-bold text-[#ccd6f6] mb-2">{project.title}</h3>
-        <p className="text-sm text-[#8892b0] line-clamp-2">
+        <h3 className="text-xl font-bold text-[var(--light-slate)] mb-2">{project.title}</h3>
+        <p className="text-sm text-[var(--slate)] line-clamp-2">
           {project.description}
         </p>
         
@@ -136,30 +136,30 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           {project.technologies.slice(0, 3).map((tech, index) => (
             <span 
               key={index} 
-              className="bg-[#64ffda]/10 text-[#64ffda] text-xs px-2 py-1 rounded"
+              className="bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)] text-xs px-2 py-1 rounded"
             >
               {tech}
             </span>
           ))}
           {project.technologies.length > 3 && (
-            <span className="text-xs text-[#64ffda]">+{project.technologies.length - 3} more</span>
+            <span className="text-xs text-[var(--accent)]">+{project.technologies.length - 3} more</span>
           )}
         </div>
         
         {/* Overlay with full details on hover */}
         <div 
-          className={`absolute inset-0 flex flex-col justify-center items-center p-6 bg-[#112240]/95 transition-all duration-300 ${
+          className={`absolute inset-0 flex flex-col justify-center items-center p-6 bg-[var(--card-bg)]/95 transition-all duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}
         >
-          <h3 className="text-2xl font-bold text-[#64ffda] mb-3">{project.title}</h3>
-          <p className="text-center text-[#ccd6f6] mb-4 max-w-md">{project.description}</p>
+          <h3 className="text-2xl font-bold text-[var(--accent)] mb-3">{project.title}</h3>
+          <p className="text-center text-[var(--light-slate)] mb-4 max-w-md">{project.description}</p>
           
           <div className="flex flex-wrap justify-center gap-2 mb-6">
             {project.technologies.map((tech, index) => (
               <span 
                 key={index} 
-                className="bg-[#64ffda]/10 text-[#64ffda] text-xs px-2 py-1 rounded"
+                className="bg-[rgba(var(--accent-rgb),0.1)] text-[var(--accent)] text-xs px-2 py-1 rounded"
               >
                 {tech}
               </span>
@@ -171,7 +171,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               href={project.liveLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#64ffda] text-[#0a192f] px-4 py-2 rounded text-sm font-medium hover:bg-[#64ffda]/90 transition-colors"
+              className="flex items-center gap-2 bg-[var(--accent)] text-[var(--card-bg)] px-4 py-2 rounded text-sm font-medium hover:bg-[var(--accent)]/90 transition-colors"
             >
               <FaExternalLinkAlt /> View Live
             </a>
@@ -179,7 +179,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               href={project.codeLink} 
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-2 border border-[#64ffda] text-[#64ffda] px-4 py-2 rounded text-sm font-medium hover:bg-[#64ffda]/10 transition-colors"
+              className="flex items-center gap-2 border border-[var(--accent)] text-[var(--accent)] px-4 py-2 rounded text-sm font-medium hover:bg-[rgba(var(--accent-rgb),0.1)] transition-colors"
             >
               <FaGithub /> Source Code
             </a>

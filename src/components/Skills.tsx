@@ -120,9 +120,9 @@ const Skills: React.FC = () => {
   }, []);
 
   return (
-    <section className="w-full bg-[#0a192f] text-[#8892b0] overflow-hidden">
+    <section className="w-full bg-[var(--section-bg)] text-[var(--slate)] overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-8 text-[#ccd6f6]">
+        <h2 className="text-4xl font-bold text-center mb-8 text-[var(--light-slate)]">
           I work with...
         </h2>
         
@@ -134,19 +134,19 @@ const Skills: React.FC = () => {
               {[...firstRowSkills, ...firstRowSkills].map((skill, index) => (
                 <div 
                   key={`row1-${index}`} 
-                  className="flex flex-col items-center justify-center p-4 bg-[#112240] rounded-md min-w-[100px] flex-shrink-0 transition-opacity duration-300"
+                  className="flex flex-col items-center justify-center p-4 bg-[var(--card-bg)] rounded-md min-w-[100px] flex-shrink-0 transition-opacity duration-300"
                 >
-                  <div className="text-[#64ffda] mb-2">
+                  <div className="text-[var(--accent)] mb-2">
                     {skill.icon}
                   </div>
-                  <p className="text-sm text-center text-[#ccd6f6]">{skill.name}</p>
+                  <p className="text-sm text-center text-[var(--light-slate)]">{skill.name}</p>
                 </div>
               ))}
             </div>
           </div>
           {/* Fade effects at the edges */}
-          <div className="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-[#0a192f] to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-[#0a192f] to-transparent z-10"></div>
+          <div className="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-[var(--section-bg)] to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-[var(--section-bg)] to-transparent z-10"></div>
         </div>
         
         {/* Second row – scrolls from left to right */}
@@ -157,19 +157,19 @@ const Skills: React.FC = () => {
               {[...secondRowSkills, ...secondRowSkills].map((skill, index) => (
                 <div 
                   key={`row2-${index}`} 
-                  className="flex flex-col items-center justify-center p-4 bg-[#112240] rounded-md min-w-[100px] flex-shrink-0 transition-opacity duration-300"
+                  className="flex flex-col items-center justify-center p-4 bg-[var(--card-bg)] rounded-md min-w-[100px] flex-shrink-0 transition-opacity duration-300"
                 >
-                  <div className="text-[#64ffda] mb-2">
+                  <div className="text-[var(--accent)] mb-2">
                     {skill.icon}
                   </div>
-                  <p className="text-sm text-center text-[#ccd6f6]">{skill.name}</p>
+                  <p className="text-sm text-center text-[var(--light-slate)]">{skill.name}</p>
                 </div>
               ))}
             </div>
           </div>
           {/* Fade effects at the edges */}
-          <div className="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-[#0a192f] to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-[#0a192f] to-transparent z-10"></div>
+          <div className="absolute top-0 left-0 h-full w-12 bg-gradient-to-r from-[var(--section-bg)] to-transparent z-10"></div>
+          <div className="absolute top-0 right-0 h-full w-12 bg-gradient-to-l from-[var(--section-bg)] to-transparent z-10"></div>
         </div>
       </div>
     </section>

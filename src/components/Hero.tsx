@@ -52,34 +52,34 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-[100vh] flex items-center justify-center bg-[#0a192f] px-4 sm:px-6 md:px-16 pt-24 pb-16 relative overflow-hidden">
+    <section className="min-h-[100vh] flex items-center justify-center bg-[var(--section-bg)] px-4 sm:px-6 md:px-16 pt-24 pb-16 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-1/4 right-8 w-64 h-64 bg-[#64ffda]/5 rounded-full filter blur-3xl"></div>
-      <div className="absolute bottom-1/4 left-8 w-96 h-96 bg-[#64ffda]/10 rounded-full filter blur-3xl"></div>
+      <div className="absolute top-1/4 right-8 w-64 h-64 bg-[var(--accent)]/5 rounded-full filter blur-3xl"></div>
+      <div className="absolute bottom-1/4 left-8 w-96 h-96 bg-[var(--accent)]/10 rounded-full filter blur-3xl"></div>
       
       <div className="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center relative z-10">
         {/* Main content - order-2 on mobile, order-1 on md+ screens */}
         <div className="w-full pt-8 order-2 md:order-1 flex flex-col">
-          <p className="text-slate-300 text-lg md:text-xl mb-4">Hello, it&apos;s me (Not Adele)</p>
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">David Emmanuel</h1>
+          <p className="text-[var(--slate)] text-lg md:text-xl mb-4">Hello, it&apos;s me (Not Adele)</p>
+          <h1 className="text-[var(--color-foreground)] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4">David Emmanuel</h1>
           <div className="mb-6 flex items-center">
-            <p className="text-slate-300 text-xl sm:text-2xl md:text-3xl lg:text-3xl">
-              I am a <span className="text-[#64ffda]" ref={typingTextRef}></span>
+            <p className="text-[var(--slate)] text-xl sm:text-2xl md:text-3xl lg:text-3xl">
+              I am a <span className="text-[var(--accent)]" ref={typingTextRef}></span>
             </p>
-            <span className="text-[#64ffda] animate-pulse text-xl sm:text-2xl md:text-3xl lg:text-4xl ml-1">|</span>
+            <span className="text-[var(--accent)] animate-pulse text-xl sm:text-2xl md:text-3xl lg:text-4xl ml-1">|</span>
           </div>
           <div className="flex flex-wrap gap-4 mt-6 md:mt-8">
             <Link 
               href="https://drive.google.com/file/d/1YLcC0qim67ksa6iUNlVKYWzQC2TtAerJ/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="border border-[#64ffda] text-[#64ffda] px-5 py-2.5 md:px-6 md:py-3 rounded hover:bg-[#64ffda]/10 transition-colors"
+              className="border border-[var(--accent)] text-[var(--accent)] px-5 py-2.5 md:px-6 md:py-3 rounded hover:bg-[var(--accent)]/10 transition-colors"
             >
               View Resume
             </Link>
             <Link 
-              href="/about" 
-              className="bg-[#64ffda] text-[#112240] px-5 py-2.5 md:px-6 md:py-3 rounded hover:bg-[#64ffda]/90 transition-colors"
+              href="#about" 
+              className="bg-[var(--accent)] text-[var(--card-bg)] px-5 py-2.5 md:px-6 md:py-3 rounded hover:bg-[var(--accent)]/90 transition-colors"
             >
               About Me
             </Link>

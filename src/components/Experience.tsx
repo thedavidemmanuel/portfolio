@@ -56,11 +56,11 @@ const Experience: React.FC = () => {
   }, [tabFocus]);
 
   return (
-    <section className="w-full py-20 bg-[#0a192f] text-[#8892b0]">
+    <section className="w-full py-20 bg-[var(--section-bg)] text-[var(--slate)]">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h2 className="text-2xl md:text-2xl font-bold mb-16 flex items-center text-[#ccd6f6]">
+        <h2 className="text-2xl md:text-2xl font-bold mb-16 flex items-center text-[var(--light-slate)]">
           My Experience
-          <div className="h-px bg-[#233554] flex-grow ml-6"></div>
+          <div className="h-px bg-[var(--card-bg)] flex-grow ml-6"></div>
         </h2>
 
         <div className="relative">
@@ -76,7 +76,7 @@ const Experience: React.FC = () => {
               >
                 <path 
                   d="M16 8L19 11M19 11L16 14M19 11H5" 
-                  stroke="#64ffda" 
+                  stroke="var(--accent)" 
                   strokeWidth="2" 
                   strokeLinecap="round" 
                   strokeLinejoin="round"
@@ -111,7 +111,6 @@ const Experience: React.FC = () => {
                   );
                 })}
               </div>
-              {/* Removed mobile swipe indicator from here */}
             </div>
             
             {/* Right - Job details */}
@@ -124,12 +123,12 @@ const Experience: React.FC = () => {
                   id={`panel-${id}`}
                   aria-labelledby={`tab-${id}`}
                 >
-                  <h3 className="text-lg md:text-xl font-medium text-[#ccd6f6]">
+                  <h3 className="text-lg md:text-xl font-medium text-[var(--light-slate)]">
                     <span>{title}</span>
-                    <span className="text-[#64ffda]"> @ </span>
+                    <span className="text-[var(--accent)]"> @ </span>
                     <a 
                       href={url} 
-                      className="text-[#64ffda] hover:underline"
+                      className="text-[var(--accent)] hover:underline"
                       target="_blank" 
                       rel="noopener noreferrer"
                     >
@@ -137,12 +136,12 @@ const Experience: React.FC = () => {
                     </a>
                   </h3>
                   
-                  <p className="font-mono text-sm text-[#a8b2d1] mt-1 mb-6">{date}</p>
+                  <p className="font-mono text-sm text-[var(--slate)] mt-1 mb-6">{date}</p>
                   
                   <ul className="space-y-4">
                     {responsibilities.map((item, i) => (
                       <li key={i} className="flex">
-                        <span className="text-[#64ffda] mr-2">▹</span>
+                        <span className="text-[var(--accent)] mr-2">▹</span>
                         <span>{item}</span>
                       </li>
                     ))}

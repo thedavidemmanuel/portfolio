@@ -8,7 +8,7 @@ import Contact from '@/components/Contact';
 
 export default function Home() {
   return (
-    <main className="bg-[#0a192f] min-h-screen">
+    <main className="bg-[var(--section-bg)] min-h-screen">
       
       {/* Main content sections with IDs for scroll targets */}
       <section id="home">

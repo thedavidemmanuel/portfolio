@@ -6,12 +6,67 @@ import ThemeToggle from './ThemeToggle';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLightTheme, setIsLightTheme] = useState(false);
 
   // Clear any URL hash on initial load (except for home) to prevent auto-scrolling
   useEffect(() => {
     if (window.location.hash && window.location.hash !== '#home') {
       window.history.replaceState({}, '', window.location.pathname);
     }
+  }, []);
+
+  // Simplified theme detection that matches ThemeToggle implementation
+  useEffect(() => {
+    // Function to check if light theme is active
+    const checkTheme = () => {
+      // Check data-theme attribute on documentElement (this is what ThemeToggle uses)
+      const dataTheme = document.documentElement.getAttribute('data-theme');
+      if (dataTheme === 'light') {
+        setIsLightTheme(true);
+        return;
+      }
+      
+      // If no data-theme attribute or it's set to dark, check localStorage
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'light') {
+        setIsLightTheme(true);
+        return;
+      }
+      
+      // Finally check system preference if no explicit theme
+      setIsLightTheme(
+        window.matchMedia && 
+        window.matchMedia('(prefers-color-scheme: light)').matches
+      );
+    };
+
+    // Initial check
+    checkTheme();
+    
+    // Set up a mutation observer to watch for data-theme attribute changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (
+          mutation.type === 'attributes' && 
+          mutation.attributeName === 'data-theme'
+        ) {
+          checkTheme();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme']
+    });
+    
+    // Also check periodically (as a fallback)
+    const intervalId = setInterval(checkTheme, 1000);
+    
+    return () => {
+      observer.disconnect();
+      clearInterval(intervalId);
+    };
   }, []);
 
   // Enhanced smooth scroll function
@@ -39,10 +94,10 @@ const Header = () => {
         }}
       >
         <Image 
-          src="/logo-main.png" 
+          src={isLightTheme ? "/logo.png" : "/logo-main.png"} 
           alt="Logo" 
-          width={100} 
-          height={100}
+          width={isLightTheme ? 120 : 100} 
+          height={isLightTheme ? 120 : 100}
           priority
         />
       </div>

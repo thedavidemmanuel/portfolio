@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import { useState } from 'react';
 
 const Footer = () => {
-  const [email] = useState('david.emmanuel@example.com');
+  const [email] = useState('thedavidleads@gmail.com');
   const year = new Date().getFullYear();
 
   return (
@@ -23,7 +23,7 @@ const Footer = () => {
               <FaGithub size={22} />
             </a>
             <a 
-              href="https://linkedin.com/in/yourusername" 
+              href="https://www.linkedin.com/in/thedavidemmanuel/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[var(--light-slate)] hover:text-[var(--accent)] transition-colors"
@@ -32,7 +32,7 @@ const Footer = () => {
               <FaLinkedin size={22} />
             </a>
             <a 
-              href="https://twitter.com/yourusername" 
+              href="https://x.com/AlwaysYakong" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[var(--light-slate)] hover:text-[var(--accent)] transition-colors"

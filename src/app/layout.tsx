@@ -6,7 +6,7 @@ import Header from '@/components/Header';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'David Emmanuel - Full Stack Developer',
+  title: 'David Emmanuel - Software Engineer',
   description: 'Portfolio website showcasing my projects and skills as a Full Stack Developer',
   icons: {
     icon: '/favicon.png', // <--- point to the image in the public folder

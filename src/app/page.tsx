@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+// Importing necessary modules and components
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Experience from '@/components/Experience';
@@ -9,7 +9,6 @@ import Contact from '@/components/Contact';
 export default function Home() {
   return (
     <main className="bg-[#0a192f] min-h-screen">
-      <Header />
       
       {/* Main content sections with IDs for scroll targets */}
       <section id="home">
